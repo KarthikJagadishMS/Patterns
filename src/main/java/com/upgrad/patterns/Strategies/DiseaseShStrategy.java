@@ -35,18 +35,25 @@ public class DiseaseShStrategy implements IndianDiseaseStat {
     	//write a try catch block here
     	
     	//try block
+	    try{
     	
 	    	//obtain response from the getDiseaseShResponseResponses() method
 	    	//store it in an object
 	    	
     		//get the response using the getCases() method
 	    	//return the response after rounding it up to 0 decimal places
+	    diseaseShResponse = String.valueOf(getDiseaseShResponseResponses().getCases().intValue());
+
+            System.out.println(diseaseShResponse);
     	
     	
     	//catch block
-    		//log the error
-    	
-    		return null;
+    		}catch (Exception e){
+            //log the error
+            System.out.println("Exception in populating count "+e);
+        }
+
+        return diseaseShResponse;
 
     	
     }
