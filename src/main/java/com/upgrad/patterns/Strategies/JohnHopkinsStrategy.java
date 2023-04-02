@@ -37,13 +37,23 @@ public class JohnHopkinsStrategy implements IndianDiseaseStat {
 		
 		//try block
 			//get response from the getJohnHopkinResponses method
-			//filter the data based such that country equals India (use getCountry() to get the country value)
-			//Map the data to "confirmed" value (use getStats() and getConfirmed() to get stats value and confirmed value)
-			//Reduce the data to get a sum of all the "confirmed" values
-			//return the response after rounding it up to 0 decimal places
-		//catch block
-			//log the error
-			return null;
+			try{
+         //filter the data based such that country equals India (use getCountry() to get the country value)
+         ConfirmedJohnHopkinsResponse = Arrays.stream(getJohnHopkinResponses()).filter(item->item.getStats().getConfirmed()>0).collect(Collectors.toList());
+         //Map the data to "confirmed" value (use getStats() and getConfirmed() to get stats value and confirmed value)
+         //Reduce the data to get a sum of all the "confirmed" values
+         //return the response after rounding it up to 0 decimal places
+         sum = ConfirmedJohnHopkinsResponse.stream().mapToInt(item -> item.getStats().getConfirmed().intValue()).sum();
+
+         //catch block
+
+      }catch (Exception e){
+         //log the error
+         System.out.println("Exception in populating count "+e);
+      }
+
+
+      return String.valueOf(sum);
 
 	
 
