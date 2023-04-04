@@ -19,9 +19,6 @@ public class IndiaDiseaseStatFactory {
         this.johnHopkinsStrategy = johnHopkinsStrategy;
     }
 
-
-
-
     //create a method named GetInstance with return type as IndianDiseaseStat and parameter of type sourceType
     	//create a conditional statement
     	//if the sourceType is JohnHopkins
