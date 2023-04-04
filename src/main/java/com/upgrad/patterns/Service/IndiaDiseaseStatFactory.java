@@ -21,11 +21,6 @@ public class IndiaDiseaseStatFactory {
         this.johnHopkinsStrategy = johnHopkinsStrategy;
     }
 
-
-
-
-
-
     public IndianDiseaseStat GetInstance(SourceType sourceEnum) {
 
 
